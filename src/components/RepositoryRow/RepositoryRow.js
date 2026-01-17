@@ -104,7 +104,9 @@ const RepositoryRow = ({ repository, onSelectReleases }) => {
                 <Paginator 
                   currentPage={currentPage} 
                   totalPages={totalPages} 
-                  onPageChange={handlePageChange} 
+                  onPageChange={handlePageChange}
+                  previousLabel="Newer Releases"
+                  nextLabel="Older Releases"
                 />
               )}
             </>

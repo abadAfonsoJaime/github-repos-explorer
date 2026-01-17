@@ -8,20 +8,27 @@
 
 .paginator button {
   padding: 8px 16px;
-  background-color: #f6f8fa;
-  border: 1px solid #d1d5da;
+  background-color: white;
+  border: 1px solid #0969da;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  color: #0969da;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
 
 .paginator button:hover:not(:disabled) {
-  background-color: #e1e4e8;
+  background-color: #0969da;
+  color: white;
+  box-shadow: 0 2px 4px rgba(9, 105, 218, 0.2);
 }
 
 .paginator button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+  border-color: #d1d5da;
+  color: #d1d5da;
 }
 
 .paginator__info {

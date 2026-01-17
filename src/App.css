@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6f8fa;
+  background-color: #e8eaed;
 }
 
 .base-container {
@@ -49,10 +49,11 @@ body {
 
 .repository-row {
   background: white;
-  border: 1px solid #d1d5da;
+  border: 2px solid #d1d5da;
   border-radius: 6px;
   padding: 16px;
   margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 768px) {
@@ -121,8 +122,8 @@ body {
 .repository-row__releases-btn {
   padding: 8px 12px;
   background-color: white;
-  color: #238636;
-  border: 2px solid #238636;
+  color: #0969da;
+  border: 2px solid #0969da;
   border-radius: 4px;
   font-size: 13px;
   font-weight: 600;
@@ -167,14 +168,14 @@ body {
 }
 
 .repository-row__releases-btn:hover {
-  background-color: #f6f8fa;
-  box-shadow: 0 2px 8px rgba(35, 134, 54, 0.15);
+  background-color: #f0f6fc;
+  box-shadow: 0 2px 8px rgba(9, 105, 218, 0.15);
   transform: translateY(-1px);
 }
 
 .repository-row__releases-btn:active {
   transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(35, 134, 54, 0.1);
+  box-shadow: 0 1px 4px rgba(9, 105, 218, 0.1);
 }
 
 /* Responsive design for mobile */
@@ -238,37 +239,61 @@ body {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid #e1e4e8;
-}
-
-.release-row {
-  background: white;
-  border: 1px solid #d1d5da;
-  border-radius: 6px;
+  margin-left: 40px;
+  max-width: calc(100% - 40px);
+  background-color: #e8eaed;
   padding: 16px;
-  margin-bottom: 16px;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
-  .release-row {
+  .repository-row__releases {
+    margin-left: 20px;
+    max-width: calc(100% - 20px);
     padding: 12px;
-    margin-bottom: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .repository-row__releases {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+.release-row {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
   .release-row {
     padding: 10px;
     margin-bottom: 10px;
   }
 }
 
+@media (max-width: 480px) {
+  .release-row {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+}
+
 .release-row h3 {
   margin-top: 0;
+  font-size: 0.95rem;
+  color: #586069;
 }
 
 @media (max-width: 480px) {
   .release-row h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -433,7 +458,7 @@ form input {
 
 form button {
   padding: 10px 20px;
-  background-color: #238636;
+  background-color: #0969da;
   color: white;
   border: none;
   border-radius: 6px;
@@ -444,7 +469,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #2ea043;
+  background-color: #0860ca;
 }
 
 @media (max-width: 768px) {
