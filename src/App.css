@@ -53,9 +53,42 @@ body {
   flex: 1;
 }
 
+.repository-row__title-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
 .repository-row__info h3 {
-  margin: 0 0 8px 0;
+  margin: 0;
   font-size: 1.1rem;
+  flex-shrink: 1;
+}
+
+.repository-row__releases-btn {
+  padding: 6px 12px;
+  background-color: #238636;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.repository-row__releases-btn:hover {
+  background-color: #2ea043;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.repository-row__releases-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .repository-row__info p {

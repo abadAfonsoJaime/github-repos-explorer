@@ -116,17 +116,17 @@ npm run eject
 ## 🏗️ Component Architecture
 
 ### Containers
-- **SearchContainer**: Manages repository search logic, API calls, and state
-- **DetailsContainer**: Handles release information display and pagination
+- **SearchContainer**: Manages repository search logic, API calls, and pagination state
+- **DetailsContainer**: Handles release information display and pagination for selected repository
 - **BaseContainer**: Provides layout wrapper and common styling
 
 ### Components
 - **SearchForm**: User input form for repository queries
 - **RepositoryList**: Displays search results in a list format
-- **RepositoryRow**: Individual repository display with key information
+- **RepositoryRow**: Individual repository display with key information and "View Releases" button
 - **ReleaseList**: Shows releases for a selected repository
 - **ReleaseRow**: Individual release information display
-- **Paginator**: Navigation controls for release pagination
+- **Paginator**: Navigation controls for pagination (both repositories and releases)
 - **Header**: Application title and branding
 - **GithubAvatar**: Displays GitHub user profile pictures
 - **FormattedDate**: Formats dates for consistent display
@@ -134,19 +134,56 @@ npm run eject
 - **HintMessage**: Displays helpful hints and information messages
 - **About**: Application information and help content
 
+## 🔄 User Interaction Flow
+
+1. **Search Repositories**: User enters search query in SearchForm
+2. **View Results**: SearchContainer displays matching repositories with pagination
+3. **Select Repository**: User clicks "View Releases" button on a RepositoryRow
+4. **Load Releases**: DetailsContainer fetches and displays releases for the selected repository
+5. **Navigate Releases**: User can paginate through releases if repository has multiple pages
+6. **Only One Selection**: Only one repository's releases can be displayed at a time
+7. **View on GitHub**: User can click repository name or individual release links to open in new tab
+
 ## 🌐 API Integration
 
+### Repository Search API
 This application uses the GitHub REST API v3 for repository searches:
 
 ```
-GET https://api.github.com/search/repositories?q={query}&sort=stars&per_page=10
+GET https://api.github.com/search/repositories?q={query}&sort=stars&per_page=10&page={page}
 ```
 
 **Features:**
 - Searches across all public GitHub repositories
 - Results sorted by star count (most popular first)
 - Returns up to 10 results per request
+- Implements pagination for browsing large result sets
 - Rate limited to 60 requests per hour for unauthenticated users
+
+### Release Information API
+When a repository is selected, the application fetches its release history:
+
+```
+GET https://api.github.com/repos/{owner}/{repo}/releases?per_page=10&page={page}
+```
+
+**Data Flow:**
+1. User searches for repositories in SearchContainer
+2. SearchContainer displays matching repositories using RepositoryList
+3. Each RepositoryRow has a "View Releases" button
+4. Clicking "View Releases" passes the repository to App.js
+5. App.js passes the selected repository to DetailsContainer
+6. DetailsContainer triggers API call to fetch releases
+7. ReleaseList displays releases with pagination support
+8. Only one repository's releases are displayed at a time
+
+**Features:**
+- Searches across all public GitHub repositories
+- Results sorted by star count (most popular first)
+- Returns up to 10 results per request
+- Implements pagination for browsing large result sets
+- Rate limited to 60 requests per hour for unauthenticated users
+- Exclusive release selection (only one repository at a time)
 
 ## 🧪 Testing
 

@@ -9,9 +9,7 @@ const RepositoryList = ({ repositories, onRepositorySelect }) => {
   return (
     <div className="repository-list">
       {repositories.map((repo) => (
-        <div key={repo.id} onClick={() => onRepositorySelect && onRepositorySelect(repo)}>
-          <RepositoryRow repository={repo} />
-        </div>
+        <RepositoryRow key={repo.id} repository={repo} onSelectReleases={onRepositorySelect} />
       ))}
     </div>
   );

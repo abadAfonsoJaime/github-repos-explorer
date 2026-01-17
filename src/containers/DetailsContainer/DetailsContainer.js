@@ -55,6 +55,7 @@ const DetailsContainer = ({ selectedRepository }) => {
 
   return (
     <div className="details-container">
+      {selectedRepository && <h2>Releases for {selectedRepository.name}</h2>}
       {loading && <p>Loading releases...</p>}
       <ReleaseList releases={releases} />
       {releases.length > 0 && totalPages > 1 && (
