@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f8fa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.base-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.app-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-container {
+  margin-bottom: 30px;
+}
+
+.details-container {
+  margin-top: 30px;
+}
+
+.repository-row {
+  background: white;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.repository-row__header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.repository-row__info {
+  flex: 1;
+}
+
+.repository-row__info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.repository-row__info p {
+  margin: 4px 0;
+  color: #586069;
+}
+
+.release-row {
+  background: white;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.release-row h3 {
+  margin-top: 0;
+}
+
+.release-row p {
+  margin: 8px 0;
+  color: #586069;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+form input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #238636;
   color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+form button:hover {
+  background-color: #2ea043;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
